@@ -5,6 +5,10 @@
     // match output dir to input dir. e.g. dist/index instead of dist/src/index
     "rootDir": "./src",
     "declarationDir": "./dist",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    // Clear the workspace-source path mapping inherited from the root tsconfig
+    // so `tsx`/Node resolve @livekit/agents-* via node_modules (built dist) at
+    // runtime — required for `__PACKAGE_VERSION__` to be inlined.
+    "paths": {}
   }
 }
